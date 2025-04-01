@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Application</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <style>
+        .jumbotron {
+            background-color: #f8f9fa;
+            padding: 4rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0.3rem;
+        }
+        .feature-box {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.25rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+            transition: all 0.3s ease;
+        }
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+        }
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="/">Enterprise Management System</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/customers">Customers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/items">Items API</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1 class="display-4">Enterprise Management System</h1>
+            <p class="lead">A comprehensive solution for managing your business operations</p>
+            <hr class="my-4">
+            <p>Access our different modules to manage customers, inventory, and more.</p>
+            <a class="btn btn-primary btn-lg" href="/customers" role="button">
+                Go to Customer Management
+            </a>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="feature-box bg-light">
+                    <div class="icon">👥</div>
+                    <h3>Customer Management</h3>
+                    <p>Add, edit, and manage customer information with our user-friendly interface.</p>
+                    <a href="/customers" class="btn btn-outline-primary">Manage Customers</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box bg-light">
+                    <div class="icon">📦</div>
+                    <h3>Inventory Management</h3>
+                    <p>Keep track of your items, stock levels, and product information.</p>
+                    <a href="/api/items" class="btn btn-outline-primary">Manage Inventory</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box bg-light">
+                    <div class="icon">📊</div>
+                    <h3>Reporting</h3>
+                    <p>Access detailed reports and analytics about your business operations.</p>
+                    <a href="#" class="btn btn-outline-secondary disabled">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2023 Enterprise Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

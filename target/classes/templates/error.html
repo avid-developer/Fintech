@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card border-danger">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0">An Error Occurred</h4>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-danger" th:if="${errorMessage}">
+                    <p th:text="${errorMessage}"></p>
+                </div>
+                <div class="alert alert-danger" th:unless="${errorMessage}">
+                    <p>Sorry, an unexpected error has occurred. Please try again later or contact support.</p>
+                </div>
+                <a href="/customers" class="btn btn-primary">Return to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

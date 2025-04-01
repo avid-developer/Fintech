@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Name</title>
+</head>
+<body>
+    <div th:fragment="content">
+        <div class="row mb-3">
+            <div class="col">
+                <h2>Add New Customer</h2>
+            </div>
+            <div class="col text-right">
+                <a th:href="@{/customers}" class="btn btn-secondary">Cancel</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="card-title mb-0">Step 1: Customer Name</h5>
+            </div>
+            <div class="card-body">
+                <div class="progress mb-4">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 20%" 
+                         aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                </div>
+                
+                <form th:action="@{/customers/save-name}" th:object="${customer}" method="post">
+                    <div class="form-group">
+                        <label for="name" class="required">Full Name</label>
+                        <input type="text" class="form-control" id="name" th:field="*{name}" 
+                               placeholder="Enter full name" required minlength="3" maxlength="50">
+                        <div class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+                        <small class="form-text text-muted">Must be between 3 and 50 characters.</small>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Next: ID Proof</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
